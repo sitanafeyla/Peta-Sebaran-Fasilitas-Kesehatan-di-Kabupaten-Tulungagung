@@ -54,7 +54,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-8.403523436246747,111.66912082488581],[-7.782715531940834,112.15409555726093]]);
+        }).fitBounds([[-8.360802594539328,111.52253916929217],[-7.794636963309349,112.31245345798425]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -209,9 +209,8 @@
         }
 
         function style_Batas_Adm_Kecamatan_1_0(feature) {
-            switch(String(feature.properties['WADMKC'])) {
-                case 'BANDUNG':
-                    return {
+            if (feature.properties['Kasus_DM'] >= 551.000000 && feature.properties['Kasus_DM'] <= 1022.000000 ) {
+                return {
                 pane: 'pane_Batas_Adm_Kecamatan_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -221,12 +220,12 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(104,127,228,1.0)',
+                fillColor: 'rgba(247,251,255,1.0)',
                 interactive: true,
             }
-                    break;
-                case 'BESUKI':
-                    return {
+            }
+            if (feature.properties['Kasus_DM'] >= 1022.000000 && feature.properties['Kasus_DM'] <= 1414.000000 ) {
+                return {
                 pane: 'pane_Batas_Adm_Kecamatan_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -236,12 +235,12 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(41,209,47,1.0)',
+                fillColor: 'rgba(115,178,216,1.0)',
                 interactive: true,
             }
-                    break;
-                case 'BOYOLANGU':
-                    return {
+            }
+            if (feature.properties['Kasus_DM'] >= 1414.000000 && feature.properties['Kasus_DM'] <= 2020.000000 ) {
+                return {
                 pane: 'pane_Batas_Adm_Kecamatan_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -251,250 +250,9 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(228,122,195,1.0)',
+                fillColor: 'rgba(8,48,107,1.0)',
                 interactive: true,
             }
-                    break;
-                case 'CAMPURDARAT':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(120,62,201,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'GONDANG':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(218,229,137,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'KALIDAWIR':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(154,14,210,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'KARANGREJO':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(218,40,215,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'KAUMAN':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(235,176,112,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'KEDUNGWARU':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(128,215,13,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'NGANTRU':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(200,168,23,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'NGUNUT':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(81,147,221,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'PAGERWOJO':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(127,207,97,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'PAKEL':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(57,219,111,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'PUCANGLABAN':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(106,209,171,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'REJOTANGAN':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(46,24,207,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'SENDANG':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(63,232,221,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'SUMBERGEMPOL':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(201,129,110,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'TANGGUNGGUNUNG':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(235,44,117,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'TULUNGAGUNG':
-                    return {
-                pane: 'pane_Batas_Adm_Kecamatan_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(64,174,207,1.0)',
-                interactive: true,
-            }
-                    break;
             }
         }
         map.createPane('pane_Batas_Adm_Kecamatan_1');
@@ -532,6 +290,10 @@
                     <tr>\
                         <th scope="row">Foto</th>\
                         <td>' + (feature.properties['Foto'] !== null ? '<img src="images/' + String(feature.properties['Foto']).replace(/[\\/:]/g, '_').trim().replace(/'/g, '\'').replace(/"/g, '&quot;') + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Koordinat</th>\
+                        <td>' + (feature.properties['Koordinat'] !== null ? autolinker.link(String(feature.properties['Koordinat']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1116,7 +878,7 @@
         });
         var overlaysTree = [
             {label: 'Fasyankes<br /><table><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_ApotekBhaktiSantoso0.png" /></td><td>Apotek Bhakti Santoso</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_ApotekFirdaus1.png" /></td><td>Apotek Firdaus</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_ApotekKahyangan2.png" /></td><td>Apotek Kahyangan</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_ApotekSarasSehat3.png" /></td><td>Apotek Saras Sehat</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_ApotekWisnuFarma4.png" /></td><td>Apotek Wisnu Farma</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_ApotekZalindra5.png" /></td><td>Apotek Zalindra</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikPratamaFivaMedika6.png" /></td><td>Klinik Pratama Fiva Medika</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikPratamaLelyMedika7.png" /></td><td>Klinik Pratama Lely Medika</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikPratamaNitaJayaHusada8.png" /></td><td>Klinik Pratama Nita Jaya Husada</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikPratamaSyafaMedika9.png" /></td><td>Klinik Pratama Syafa Medika</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikTrisnaMedikaCampurdarat10.png" /></td><td>Klinik Trisna Medika Campurdarat</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikUltraMedica11.png" /></td><td>Klinik Ultra Medica</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikUtamaRomoWijoyo12.png" /></td><td>Klinik Utama Romo Wijoyo</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_KlinikUtamaSAM13.png" /></td><td>Klinik Utama S.A.M</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasBalesono14.png" /></td><td>Puskesmas Balesono</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasBandung15.png" /></td><td>Puskesmas Bandung</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasBesuki16.png" /></td><td>Puskesmas Besuki</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasBoyolangu17.png" /></td><td>Puskesmas Boyolangu</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasDono18.png" /></td><td>Puskesmas Dono</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasGondang19.png" /></td><td>Puskesmas Gondang</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasJeli20.png" /></td><td>Puskesmas Jeli</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasKalidawir21.png" /></td><td>Puskesmas Kalidawir</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasKarangrejo22.png" /></td><td>Puskesmas Karangrejo</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasKauman23.png" /></td><td>Puskesmas Kauman</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasKedungwaru24.png" /></td><td>Puskesmas Kedungwaru</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasNgantru25.png" /></td><td>Puskesmas Ngantru</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasNgunut26.png" /></td><td>Puskesmas Ngunut</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasPagerwojo27.png" /></td><td>Puskesmas Pagerwojo</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasPakel28.png" /></td><td>Puskesmas Pakel</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasRejotangan29.png" /></td><td>Puskesmas Rejotangan</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasSendang30.png" /></td><td>Puskesmas Sendang</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasSimo31.png" /></td><td>Puskesmas Simo</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasSumbergempol32.png" /></td><td>Puskesmas Sumbergempol</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_PuskesmasTanggunggunung33.png" /></td><td>Puskesmas Tanggunggunung</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_RumahSakitBhayangkaraTulungagung34.png" /></td><td>Rumah Sakit Bhayangkara Tulungagung</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_RumahSakitPrimaMedika35.png" /></td><td>Rumah Sakit Prima Medika</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_RumahSakitPutraWaspada36.png" /></td><td>Rumah Sakit Putra Waspada</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_RumahSakitUmumDaerahdrIskakTulungagung37.png" /></td><td>Rumah Sakit Umum Daerah dr. Iskak Tulungagung</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_RumahSakitUmumDaerahdrKarneniCampurdarat38.png" /></td><td>Rumah Sakit Umum Daerah dr. Karneni Campurdarat</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_RumahSakitUmumIslamOrpehaTulungagung39.png" /></td><td>Rumah Sakit Umum Islam Orpeha Tulungagung</td></tr><tr><td style="text-align: center;"><img src="legend/Fasyankes_2_40.png" /></td><td></td></tr></table>', layer: cluster_Fasyankes_2},
-            {label: 'Batas_Adm_Kecamatan<br /><table><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_BANDUNG0.png" /></td><td>BANDUNG</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_BESUKI1.png" /></td><td>BESUKI</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_BOYOLANGU2.png" /></td><td>BOYOLANGU</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_CAMPURDARAT3.png" /></td><td>CAMPURDARAT</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_GONDANG4.png" /></td><td>GONDANG</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_KALIDAWIR5.png" /></td><td>KALIDAWIR</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_KARANGREJO6.png" /></td><td>KARANGREJO</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_KAUMAN7.png" /></td><td>KAUMAN</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_KEDUNGWARU8.png" /></td><td>KEDUNGWARU</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_NGANTRU9.png" /></td><td>NGANTRU</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_NGUNUT10.png" /></td><td>NGUNUT</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_PAGERWOJO11.png" /></td><td>PAGERWOJO</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_PAKEL12.png" /></td><td>PAKEL</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_PUCANGLABAN13.png" /></td><td>PUCANGLABAN</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_REJOTANGAN14.png" /></td><td>REJOTANGAN</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_SENDANG15.png" /></td><td>SENDANG</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_SUMBERGEMPOL16.png" /></td><td>SUMBERGEMPOL</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_TANGGUNGGUNUNG17.png" /></td><td>TANGGUNGGUNUNG</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_TULUNGAGUNG18.png" /></td><td>TULUNGAGUNG</td></tr></table>', layer: layer_Batas_Adm_Kecamatan_1},
+            {label: 'Batas_Adm_Kecamatan<br /><table><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_55110220.png" /></td><td>551 - 1022</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_102214141.png" /></td><td>1022 - 1414</td></tr><tr><td style="text-align: center;"><img src="legend/Batas_Adm_Kecamatan_1_141420202.png" /></td><td>1414 - 2020</td></tr></table>', layer: layer_Batas_Adm_Kecamatan_1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
